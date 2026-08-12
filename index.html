@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Shop - ร้านค้าออนไลน์</title>
+    <title>ศรีภูมิจักสาน - ร้านค้าออนไลน์</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
 
     <!-- ส่วนต้อนรับลูกค้า -->
     <section class="hero">
-        <h1>ยินดีต้อนรับสู่ Minimal Shop</h1>
+        <h1>ยินดีต้อนรับสู่ ศรีภูมิจักสาน</h1>
         <p>คัดสรรสินค้าคุณภาพ ดีไซน์เรียบง่าย เพื่อไลฟ์สไตล์ของคุณ</p>
     </section>
 
@@ -36,7 +36,7 @@
                 <img src="img.jpg" alt="สินค้า 1" class="product-img">
                 <h3>โคมไฟตั้งโต๊ะมินิมอล</h3>
                 <p class="price">350 บาท</p>
-                <a href="https://line.meีไลน์ของคุณ" target="_blank" class="buy-btn line-btn">สั่งซื้อทาง LINE</a>
+                <a href="@siphumshop" target="_blank" class="buy-btn line-btn">สั่งซื้อทาง LINE</a>
             </div>
 
             <!-- สินค้าชิ้นที่ 2 -->
@@ -44,7 +44,7 @@
                 <img src="img.jpg" alt="สินค้า 2" class="product-img">
                 <h3>แก้วกาแฟเซรามิก</h3>
                 <p class="price">190 บาท</p>
-                <a href="https://m.meื่อเพจของคุณ" target="_blank" class="buy-btn fb-btn">สั่งซื้อทาง Facebook</a>
+                <a href="https://www.facebook.com/siphum999" target="_blank" class="buy-btn fb-btn">สั่งซื้อทาง Facebook</a>
             </div>
         </div>
     </main>
@@ -103,12 +103,12 @@
             // ตั้งค่าลิงก์และสไตล์ปุ่มตามช่องทางที่เลือก
             let btnClass = 'line-btn';
             let btnText = 'สั่งซื้อทาง LINE';
-            let btnLink = 'https://line.meีไลน์ของคุณ';
+            let btnLink = '@siphumshop';
 
             if (channel === 'fb') {
                 btnClass = 'fb-btn';
                 btnText = 'สั่งซื้อทาง Facebook';
-                btnLink = 'https://m.meื่อเพจของคุณ';
+                btnLink = 'https://www.facebook.com/siphum999';
             }
 
             // สร้างโครงสร้างการ์ดสินค้าใหม่
