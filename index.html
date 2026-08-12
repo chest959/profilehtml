@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
+    <title>Minimal Shop - ร้านค้าออนไลน์</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ยินดีต้อนรับสู่เว็บไซต์ ร้านศรีภูมิจักสาน</h1>
-        <p>โปรเจกต์นี้โฮสต์อยู่บน GitHub Pages อย่างปลอดภัย</p>
+
+    <!-- แถบเมนูด้านบน -->
+    <header class="navbar">
+        <div class="logo">Minimal Shop</div>
+        <nav>
+            <a href="#">หน้าแรก</a>
+            <a href="#">สินค้าทั้งหมด</a>
+            <a href="#">ติดต่อเรา</a>
+        </nav>
     </header>
 
-    <main>
-        <section class="card">
-            <h2>เกี่ยวกับโปรเจกต์</h2>
-            <p>นี่คือหน้าเว็บเริ่มต้นที่สร้างขึ้นด้วย HTML และ CSS โดยมีการดึงรูปภาพตัวอย่างมาแสดงผลผ่านโค้ด</p>
-            <div class="image-container">
-                <img src="img.jpg" alt="รูปภาพประกอบเว็บไซต์" class="responsive-img">
+    <!-- ส่วนต้อนรับลูกค้า -->
+    <section class="hero">
+        <h1>ยินดีต้อนรับสู่ Minimal Shop</h1>
+        <p>คัดสรรสินค้าคุณภาพ ดีไซน์เรียบง่าย เพื่อไลฟ์สไตล์ของคุณ</p>
+    </section>
+
+    <!-- ส่วนแสดงสินค้า -->
+    <main class="shop-container">
+        <h2>สินค้าแนะนำ</h2>
+        
+        <div class="product-grid">
+            <!-- สินค้าชิ้นที่ 1 -->
+            <div class="product-card">
+                <img src="img.jpg" alt="สินค้า 1" class="product-img">
+                <h3>โคมไฟตั้งโต๊ะมินิมอล</h3>
+                <p class="price">350 บาท</p>
+                <button class="buy-btn" onclick="alert('เพิ่มสินค้าลงตะกร้าแล้ว!')">สั่งซื้อสินค้า</button>
             </div>
-            <p class="caption">รูปภาพประกอบสไตล์มินิมอล</p>
-        </section>
+
+            <!-- สินค้าชิ้นที่ 2 -->
+            <div class="product-card">
+                <img src="img.jpg" alt="สินค้า 2" class="product-img">
+                <h3>แก้วกาแฟเซรามิก</h3>
+                <p class="price">190 บาท</p>
+                <button class="buy-btn" onclick="alert('เพิ่มสินค้าลงตะกร้าแล้ว!')">สั่งซื้อสินค้า</button>
+            </div>
+
+            <!-- สินค้าชิ้นที่ 3 -->
+            <div class="product-card">
+                <img src="img.jpg" alt="สินค้า 3" class="product-img">
+                <h3>สมุดบันทึกปกหนัง</h3>
+                <p class="price">250 บาท</p>
+                <button class="buy-btn" onclick="alert('เพิ่มสินค้าลงตะกร้าแล้ว!')">สั่งซื้อสินค้า</button>
+            </div>
+        </div>
     </main>
 
+    <!-- ส่วนท้ายเว็บ -->
     <footer>
-        <p>&copy; 2026 สร้างด้วยความรักบน GitHub</p>
+        <p>&copy; 2026 Minimal Shop. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
