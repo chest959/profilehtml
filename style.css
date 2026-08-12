@@ -1,0 +1,99 @@
+/* กำหนดค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ส่วนหัว */
+header {
+    background: linear-gradient(135deg, #24292e 0%, #4c51bf 100%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ส่วนเนื้อหา */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.card h2 {
+    color: #4c51bf;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+}
+
+/* ปุ่มและเอฟเฟกต์ */
+button {
+    background-color: #4c51bf;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #3c366b;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    margin-top: 1rem;
+    color: #2f855a;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ส่วนท้าย */
+footer {
+    background-color: #24292e;
+    color: #a0aec0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
