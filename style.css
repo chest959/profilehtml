@@ -135,3 +135,28 @@ footer {
     margin-top: 60px;
     font-size: 14px;
 }
+/* ตกแต่งปุ่มลิงก์ให้แสดงผลเหมือนปุ่มกด */
+a.buy-btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ปุ่ม LINE สีเขียว */
+.line-btn {
+    background-color: #06C755 !important;
+    color: #fff !important;
+}
+.line-btn:hover {
+    background-color: #05b04b !important;
+}
+
+/* ปุ่ม Facebook สีน้ำเงิน */
+.fb-btn {
+    background-color: #1877F2 !important;
+    color: #fff !important;
+}
+.fb-btn:hover {
+    background-color: #145dbf !important;
+}
