@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ศรีภูมิจักสาน - ร้านค้าออนไลน์</title>
+    <title>Minimal Shop - ร้านค้าออนไลน์</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
         <nav>
             <a href="#">หน้าแรก</a>
             <a href="#">สินค้าทั้งหมด</a>
-            <!-- ลิงก์ติดต่อเราสำหรับทักแชทโดยตรง -->
-            <a href="@siphumshop" target="_blank">ติดต่อเรา</a>
+            <!-- ปุ่มกดเพื่อเปิดหน้าต่างเพิ่มสินค้า -->
+            <button class="add-product-trigger" onclick="toggleModal(true)">➕ เพิ่มสินค้าใหม่</button>
         </nav>
     </header>
 
@@ -29,39 +29,107 @@
     <main class="shop-container">
         <h2>สินค้าแนะนำ</h2>
         
-        <div class="product-grid">
-            <!-- สินค้าชิ้นที่ 1 (ตัวอย่าง: ปุ่มลิงก์ไป LINE) -->
+        <!-- กล่องรวมการ์ดสินค้า -->
+        <div class="product-grid" id="productGrid">
+            <!-- สินค้าชิ้นที่ 1 -->
             <div class="product-card">
                 <img src="img.jpg" alt="สินค้า 1" class="product-img">
                 <h3>โคมไฟตั้งโต๊ะมินิมอล</h3>
                 <p class="price">350 บาท</p>
-                <!-- เปลี่ยนข้อความใน href เป็นลิงก์ LINE OA หรือกลุ่มของคุณ -->
-                <a href="@siphumshop" target="_blank" class="buy-btn line-btn">สั่งซื้อทาง LINE</a>
+                <a href="https://line.meีไลน์ของคุณ" target="_blank" class="buy-btn line-btn">สั่งซื้อทาง LINE</a>
             </div>
 
-            <!-- สินค้าชิ้นที่ 2 (ตัวอย่าง: ปุ่มลิงก์ไป Facebook Messenger) -->
+            <!-- สินค้าชิ้นที่ 2 -->
             <div class="product-card">
                 <img src="img.jpg" alt="สินค้า 2" class="product-img">
                 <h3>แก้วกาแฟเซรามิก</h3>
                 <p class="price">190 บาท</p>
-                <!-- เปลี่ยนข้อความใน href เป็นลิงก์แชทเพจ Facebook ของคุณ -->
                 <a href="https://m.meื่อเพจของคุณ" target="_blank" class="buy-btn fb-btn">สั่งซื้อทาง Facebook</a>
-            </div>
-
-            <!-- สินค้าชิ้นที่ 3 (ตัวอย่าง: ปุ่มลิงก์ไป LINE) -->
-            <div class="product-card">
-                <img src="img.jpg" alt="สินค้า 3" class="product-img">
-                <h3>สมุดบันทึกปกหนัง</h3>
-                <p class="price">250 บาท</p>
-                <a href="@siphumshop" target="_blank" class="buy-btn line-btn">สั่งซื้อทาง LINE</a>
             </div>
         </div>
     </main>
+
+    <!-- หน้าต่างป็อปอัปสำหรับกรอกข้อมูลสินค้าใหม่ (Modal) -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-box">
+            <h3>เพิ่มสินค้าใหม่เข้าสู่ร้าน</h3>
+            <div class="form-group">
+                <label>ชื่อสินค้า:</label>
+                <input type="text" id="pName" placeholder="เช่น กระเป๋าผ้าแคนวาส">
+            </div>
+            <div class="form-group">
+                <label>ราคาสินค้า (บาท):</label>
+                <input type="number" id="pPrice" placeholder="เช่น 290">
+            </div>
+            <div class="form-group">
+                <label>ช่องทางการสั่งซื้อหลัก:</label>
+                <select id="pChannel">
+                    <option value="line">LINE</option>
+                    <option value="fb">Facebook</option>
+                </select>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="toggleModal(false)">ยกเลิก</button>
+                <button class="save-btn" onclick="addNewProduct()">บันทึกสินค้า</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ส่วนท้ายเว็บ -->
     <footer>
         <p>&copy; 2026 Minimal Shop. All rights reserved.</p>
     </footer>
 
+    <!-- ระบบ JavaScript สำหรับเพิ่มสินค้าแบบเรียลไทม์ -->
+    <script>
+        // ฟังก์ชันเปิด-ปิด หน้าต่างเพิ่มสินค้า
+        function toggleModal(show) {
+            const modal = document.getElementById('productModal');
+            modal.style.display = show ? 'flex' : 'none';
+        }
+
+        // ฟังก์ชันกดบันทึกแล้วนำสินค้าไปแสดงบนหน้าเว็บ
+        function addNewProduct() {
+            const name = document.getElementById('pName').value;
+            const price = document.getElementById('pPrice').value;
+            const channel = document.getElementById('pChannel').value;
+
+            // ตรวจสอบว่ากรอกข้อมูลครบไหม
+            if (!name || !price) {
+                alert('กรุณากรอกชื่อและราคาสินค้าให้ครบถ้วน');
+                return;
+            }
+
+            // ตั้งค่าลิงก์และสไตล์ปุ่มตามช่องทางที่เลือก
+            let btnClass = 'line-btn';
+            let btnText = 'สั่งซื้อทาง LINE';
+            let btnLink = 'https://line.meีไลน์ของคุณ';
+
+            if (channel === 'fb') {
+                btnClass = 'fb-btn';
+                btnText = 'สั่งซื้อทาง Facebook';
+                btnLink = 'https://m.meื่อเพจของคุณ';
+            }
+
+            // สร้างโครงสร้างการ์ดสินค้าใหม่
+            const grid = document.getElementById('productGrid');
+            const newCard = document.createElement('div');
+            newCard.className = 'product-card';
+            newCard.innerHTML = `
+                <img src="img.jpg" alt="${name}" class="product-img">
+                <h3>${name}</h3>
+                <p class="price">${price} บาท</p>
+                <a href="${btnLink}" target="_blank" class="buy-btn ${btnClass}">${btnText}</a>
+            `;
+
+            // เพิ่มการ์ดใหม่เข้าไปในหน้าเว็บ
+            grid.appendChild(newCard);
+
+            // ล้างข้อมูลในฟอร์มและปิดหน้าต่าง
+            document.getElementById('pName').value = '';
+            document.getElementById('pPrice').value = '';
+            toggleModal(false);
+        }
+    </script>
 </body>
 </html>
